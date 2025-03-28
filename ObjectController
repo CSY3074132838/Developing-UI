@@ -1,1 +1,11 @@
+using UnityEngine;
+using UnityEngine.UI;
 
+public class ObjectController : MonoBehaviour
+{
+    [Header("Movement Settings")]
+    public float rotationSpeed = 180.0f; // 旋转速度（度/秒）
+    public float zoomSpeed = 2.0f;
+
+    [Header("UI Binding")]
+    [SerializeField] private Button resetButton;

@@ -27,3 +27,11 @@ void Start()
         resetButton.onClick.AddListener(ResetTransform);
     }
 }
+
+ // 修改为旋转方法
+ public void RotateLeft() => transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
+ public void RotateRight() => transform.Rotate(Vector3.down * rotationSpeed * Time.deltaTime);
+
+ // 缩放方法保持不变
+ public void ZoomIn() => transform.localScale += Vector3.one * zoomSpeed * Time.deltaTime;
+ public void ZoomOut() => transform.localScale -= Vector3.one * zoomSpeed * Time.deltaTime;

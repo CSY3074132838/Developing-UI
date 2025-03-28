@@ -35,3 +35,11 @@ void Start()
  // 缩放方法保持不变
  public void ZoomIn() => transform.localScale += Vector3.one * zoomSpeed * Time.deltaTime;
  public void ZoomOut() => transform.localScale -= Vector3.one * zoomSpeed * Time.deltaTime;
+    // 增强版重置方法
+    public void ResetTransform()
+    {
+        transform.position = originalPosition;
+        transform.rotation = originalRotation;
+        transform.localScale = originalScale;
+    }
+}

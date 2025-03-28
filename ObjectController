@@ -9,3 +9,21 @@ public class ObjectController : MonoBehaviour
 
     [Header("UI Binding")]
     [SerializeField] private Button resetButton;
+// 记录初始状态的变量
+private Vector3 originalPosition;
+private Quaternion originalRotation;
+private Vector3 originalScale;
+
+void Start()
+{
+    // 记录初始状态
+    originalPosition = transform.position;
+    originalRotation = transform.rotation;
+    originalScale = transform.localScale;
+
+    if (resetButton != null)
+    {
+        // 修改绑定到新的重置方法
+        resetButton.onClick.AddListener(ResetTransform);
+    }
+}
